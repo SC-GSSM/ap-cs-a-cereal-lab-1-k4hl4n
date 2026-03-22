@@ -3,10 +3,12 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.List;
 
 public class CerealRunner
 {
     // create a private instance variable to store an ArrayList of Cereal objects
+    private List<Cereal> cerealArrayList;
 
     public CerealRunner(String fileName)
     {
@@ -22,12 +24,21 @@ public class CerealRunner
 
                 // use the split method to parse the data into an array of
                 //   String objects
+                String[] data = myStr.split(",");
 
                 // go through each String array element and save it
                 //   into the appropriate variable which will be used to
                 //   create a Cereal object
+                String name = data[0];
+                double calories = Double.parseDouble(data[1]);
+                double fiber = Double.parseDouble(data[2]);
+                double carbohydrates = Double.parseDouble(data[3]);
+                double cups = Double.parseDouble(data[4]);
+
 
                 // create a new Cereal object, and add it to the ArrayList
+                Cereal c = new Cereal(name, calories, fiber, carbohydrates, cups);
+                cerealArrayList.add(c);
 
             }
             scan.close();
@@ -39,7 +50,7 @@ public class CerealRunner
             e.printStackTrace();
         }
 
-        int numCereals = cereals.size();
+        int numCereals = cerealArrayList.size();
         System.out.println(numCereals + " records created.");
     }
 

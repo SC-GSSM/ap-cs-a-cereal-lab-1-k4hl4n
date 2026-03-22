@@ -9,13 +9,61 @@ public class Cereal
 {
     // private instance variables to hold info about a cereal from the data set
     // the name, calories, fiber, carbohydrates, and cups
+    private String name;
+    private double calories;
+    private double fiber;
+    private double carbohydrates;
+    private double cups;
 
     // constructor that creates a cereal object
+    public Cereal(String name, double calories, double fiber, double carbohydrates, double cups){
+        this.name = name;
+        this.calories = calories;
+        this.fiber = fiber;
+        this.carbohydrates = carbohydrates;
+        this.cups = cups;
+    }
 
     // accessor methods for each instance variable
+    public String getName(){
+        return name;
+    }
+    public double getCalories(){
+        return calories;
+    }
+    public double getFiber(){
+        return fiber;
+    }
+    public double getCarbs(){
+        return carbohydrates;
+    }
+    public double getCups(){
+        return cups;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setCalories(double calories){
+        this.calories = calories;
+    }
+    public void setFiber(double fiber){
+        this.fiber = fiber;
+    }
+    public void setCarbohydrates(double carbohydrates){
+        this.carbohydrates = carbohydrates;
+    }
+    public void setCups(double cups){
+        this.cups = cups;
+    }
+
 
     /* toString method returns the values stored in the instance variables
        concatenated in a sentence starting with "Cereal: " */
+
+    public String toString(){
+        return("Cereal: " + getName()+" Calories: " + getCalories() + " Fiber: " + getFiber() + " Carbohydrates: " + getCarbs() + " Cups: " + getCups());
+    }
 
 }
 
